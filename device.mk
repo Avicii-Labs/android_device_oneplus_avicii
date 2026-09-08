@@ -322,6 +322,7 @@ PRODUCT_PACKAGES += \
     FrameworksRes \
     LineageSdkRes \
     LineageSettingsProviderRes \
+    NcmTetheringOverlay \
     SettingsProviderRes \
     SettingsRes \
     SystemUIRes \
