@@ -13,24 +13,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/avicii/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_avicii
+PRODUCT_NAME := custom_avicii
 PRODUCT_DEVICE := avicii
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := AC2003
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-
-LUNARIS_BUILD_TYPE := OFFICIAL
-WITH_GMS := true
-TARGET_SUPPORTS_GOOGLE_TELEPHONY := true
-SURFACE_FLINGER_BOOST := true
-WITH_BCR := true
-TARGET_ENABLE_BLUR := true
-USE_REALITY_ENGINE := true
-TARGET_CUSTOM_UDFPS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="Nord-user 12 RKQ1.211119.001 Q.202212051830:user release-keys" \
