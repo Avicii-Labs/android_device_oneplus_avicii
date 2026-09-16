@@ -23,22 +23,16 @@ PRODUCT_MODEL := AC2003
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-LUNARIS_BUILD_TYPE := OFFICIAL
-WITH_GMS := true
-TARGET_SUPPORTS_GOOGLE_TELEPHONY := true
-SURFACE_FLINGER_BOOST := true
-WITH_BCR := true
-TARGET_ENABLE_BLUR := true
-USE_REALITY_ENGINE := true
-TARGET_CUSTOM_UDFPS := true
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="Nord-user 12 RKQ1.211119.001 Q.202212051830:user release-keys" \
     BuildFingerprint=OnePlus/Nord/Nord:12/RKQ1.211119.001/Q.202212051830:user/release-keys \
     DeviceName=Nord \
     DeviceProduct=avicii \
     SystemName=Nord \
-    SystemDevice=avicii
+    SystemDevice=avicii \
+    RisingChipset="Snapdragon® 765G" \
+    RisingMaintainer="NoEscape.exe"
 
 # Flags
 TARGET_INCLUDES_DolbyVision := true
+WITH_GMS := true
