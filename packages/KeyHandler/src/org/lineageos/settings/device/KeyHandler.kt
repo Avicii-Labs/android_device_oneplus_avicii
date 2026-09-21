@@ -75,18 +75,6 @@ class KeyHandler(private val context: Context) : DeviceKeyHandler {
         }
 
         val deviceName = event.device.name
-
-        if (deviceName == "touchpanel") {
-            if (event.scanCode == KEYCODE_DOUBLE_TAP || event.keyCode == KeyEvent.KEYCODE_F1) {
-                powerManager.wakeUp(
-                    SystemClock.uptimeMillis(),
-                    PowerManager.WAKE_REASON_GESTURE,
-                    "KeyHandler:DT2W"
-                )
-                return null
-            }
-        }
-
         if (deviceName != "oplus,hall_tri_state_key" && deviceName != "oplus,tri-state-key") {
             return event
         }
@@ -184,9 +172,6 @@ class KeyHandler(private val context: Context) : DeviceKeyHandler {
 
     companion object {
         private const val TAG = "KeyHandler"
-
-        // Keycodes
-        private const val KEYCODE_DOUBLE_TAP = 250
 
         // Intent actions
         const val CHANGED_ACTION = "org.lineageos.settings.UPDATE_SETTINGS"
