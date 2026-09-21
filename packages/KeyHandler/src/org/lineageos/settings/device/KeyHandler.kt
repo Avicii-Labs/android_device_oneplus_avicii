@@ -12,6 +12,8 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
 import android.media.AudioSystem
+import android.os.PowerManager
+import android.os.SystemClock
 import android.os.VibrationAttributes
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -24,6 +26,7 @@ import java.util.concurrent.Executors
 class KeyHandler(private val context: Context) : DeviceKeyHandler {
     private val audioManager = context.getSystemService(AudioManager::class.java)!!
     private val notificationManager = context.getSystemService(NotificationManager::class.java)!!
+    private val powerManager = context.getSystemService(PowerManager::class.java)!!
     private val vibrator = context.getSystemService(Vibrator::class.java)!!
 
     private val packageContext =
@@ -72,6 +75,17 @@ class KeyHandler(private val context: Context) : DeviceKeyHandler {
         }
 
         val deviceName = event.device.name
+
+        if (deviceName == "touchpanel") {
+            if (event.scanCode == KEYCODE_DOUBLE_TAP || event.keyCode == KeyEvent.KEYCODE_F1) {
+                powerManager.wakeUp(
+                    SystemClock.uptimeMillis(),
+                    PowerManager.WAKE_REASON_GESTURE,
+                    "KeyHandler:DT2W"
+                )
+                return null
+            }
+        }
 
         if (deviceName != "oplus,hall_tri_state_key" && deviceName != "oplus,tri-state-key") {
             return event
@@ -170,6 +184,9 @@ class KeyHandler(private val context: Context) : DeviceKeyHandler {
 
     companion object {
         private const val TAG = "KeyHandler"
+
+        // Keycodes
+        private const val KEYCODE_DOUBLE_TAP = 250
 
         // Intent actions
         const val CHANGED_ACTION = "org.lineageos.settings.UPDATE_SETTINGS"
