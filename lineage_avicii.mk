@@ -39,6 +39,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=avicii \
     SystemName=Nord \
     SystemDevice=avicii
-
-# Flags
-TARGET_INCLUDES_DolbyVision := true
