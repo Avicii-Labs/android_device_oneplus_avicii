@@ -104,8 +104,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     libcamera_metadata_shim \
-    libcamera2ndk_vendor \
-    libstdc++_vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_COPY_FILES += \
@@ -551,4 +549,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/oneplus/avicii/avicii-vendor.mk)
 
 # Inherit from the OnePlus Camera makefile.
-$(call inherit-product, vendor/oneplus/camera/config.mk)
+$(call inherit-product, device/oneplus/camera/device.mk)

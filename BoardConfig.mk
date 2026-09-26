@@ -49,10 +49,6 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := lito
 
-# Camera
-$(call soong_config_set_bool,camera,override_format_from_reserved,true)
-$(call soong_config_set,camera,package_name,com.oneplus.camera)
-
 # Display
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
 TARGET_SCREEN_DENSITY := 399
@@ -194,3 +190,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/avicii/BoardConfigVendor.mk
+
+# Inherit from the OnePlus Camera BoardConfig.
+include device/oneplus/camera/BoardConfig.mk
