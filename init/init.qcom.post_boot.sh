@@ -6163,6 +6163,7 @@ case "$target" in
         setprop vendor.post_boot.parsed 1
     ;;
     "apq8084")
+        rm /data/system/perfd/default_values
         start mpdecision
         echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
         echo 512 > /sys/block/sda/bdi/read_ahead_kb

@@ -328,7 +328,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr
+    android.hardware.power-service-qti \
+    android.hardware.power@1.2.vendor \
+    vendor.qti.hardware.perf@2.2.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -383,10 +385,7 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel/power-libperfmgr \
-    hardware/lineage/interfaces/power-libperfmgr
+
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -457,6 +456,7 @@ SPAMMY_LOG_TAGS := \
     android.hardware.light-V2-ndk.vendor \
     vibratorfeature-wrapper \
     android.hardware.vibrator-V1-ndk_platform.vendor \
+    libqti-perfd-client \
     BATTERY_CHG \
     BackgroundInstallControlService \
     BackupTransportManager \
