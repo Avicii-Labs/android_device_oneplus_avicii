@@ -37,7 +37,6 @@
       "Name": "CPULittleClusterUpRateLimit",
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us",
       "Values": [
-        "0",
         "500",
         "2000"
       ],
@@ -87,7 +86,6 @@
       "Name": "CPUBigClusterUpRateLimit",
       "Path": "/sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us",
       "Values": [
-        "0",
         "500",
         "2000"
       ],
@@ -137,7 +135,6 @@
       "Name": "CPUBigPlusClusterUpRateLimit",
       "Path": "/sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us",
       "Values": [
-        "0",
         "500",
         "2000"
       ],
@@ -500,7 +497,7 @@
       "PowerHint": "INTERACTIVE",
       "Node": "CPULittleClusterUpRateLimit",
       "Duration": 0,
-      "Value": "0"
+      "Value": "500"
     },
     {
       "PowerHint": "INTERACTIVE",
@@ -512,7 +509,7 @@
       "PowerHint": "INTERACTIVE",
       "Node": "CPUBigClusterUpRateLimit",
       "Duration": 0,
-      "Value": "0"
+      "Value": "500"
     },
     {
       "PowerHint": "INTERACTIVE",
@@ -524,7 +521,7 @@
       "PowerHint": "INTERACTIVE",
       "Node": "CPUBigPlusClusterUpRateLimit",
       "Duration": 0,
-      "Value": "0"
+      "Value": "500"
     },
     {
       "PowerHint": "INTERACTIVE",
