@@ -11,6 +11,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 PRODUCT_PACKAGES += \
     KeyHandler
 
+# ART
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
