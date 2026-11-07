@@ -1,5 +1,8 @@
 # Bluetooth Name
 bluetooth.device.default_name=OnePlus Nord
 
+# Camera
+persist.vendor.camera.perflock.enable=0
+
 # USB String
 vendor.usb.product_string=OnePlus Nord
